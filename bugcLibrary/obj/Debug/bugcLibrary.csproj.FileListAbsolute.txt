@@ -1,0 +1,10 @@
+c:\users\internetlab\documents\visual studio 2012\Projects\bugcLibrary\bugcLibrary\bin\Debug\bugcLibrary.exe.config
+c:\users\internetlab\documents\visual studio 2012\Projects\bugcLibrary\bugcLibrary\bin\Debug\bugcLibrary.exe
+c:\users\internetlab\documents\visual studio 2012\Projects\bugcLibrary\bugcLibrary\bin\Debug\bugcLibrary.pdb
+c:\users\internetlab\documents\visual studio 2012\Projects\bugcLibrary\bugcLibrary\obj\Debug\bugcLibrary.csprojResolveAssemblyReference.cache
+c:\users\internetlab\documents\visual studio 2012\Projects\bugcLibrary\bugcLibrary\obj\Debug\bugcLibrary.LoginForm.resources
+c:\users\internetlab\documents\visual studio 2012\Projects\bugcLibrary\bugcLibrary\obj\Debug\bugcLibrary.Properties.Resources.resources
+c:\users\internetlab\documents\visual studio 2012\Projects\bugcLibrary\bugcLibrary\obj\Debug\bugcLibrary.csproj.GenerateResource.Cache
+c:\users\internetlab\documents\visual studio 2012\Projects\bugcLibrary\bugcLibrary\obj\Debug\bugcLibrary.exe
+c:\users\internetlab\documents\visual studio 2012\Projects\bugcLibrary\bugcLibrary\obj\Debug\bugcLibrary.pdb
+C:\Users\internetLab\documents\visual studio 2012\Projects\bugcLibrary\bugcLibrary\obj\Debug\bugcLibrary.MainForm.resources
