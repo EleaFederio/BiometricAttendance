@@ -32,9 +32,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=6.8.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+    <Reference Include="Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>libraries\dll\MySql.Data.dll</HintPath>
+      <HintPath>libraries\dll\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="libzkfpcsharp, Version=1.0.0.1, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libraries\dll\libzkfpcsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroControls, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libraries\dll\MetroControls.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.1.2.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Library\WindowsFormsApplication1\WindowsFormsApplication1\resources\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -48,6 +60,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="libraries\BitmapFormat.cs" />
+    <Compile Include="Library_dtr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Library_dtr.Designer.cs">
+      <DependentUpon>Library_dtr.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +83,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecordStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecordStudent.Designer.cs">
+      <DependentUpon>RecordStudent.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Library_dtr.resx">
+      <DependentUpon>Library_dtr.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -79,6 +107,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RecordStudent.resx">
+      <DependentUpon>RecordStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -94,7 +125,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="libraries\dll\MySql.Data.dll" />
+    <Content Include="libraries\dll\Bunifu_UI_v1.5.3.dll" />
+    <Content Include="libraries\dll\libzkfpcsharp.dll" />
+    <Content Include="libraries\dll\MetroControls.dll" />
+    <Content Include="libraries\MySql.Data.dll" />
     <Content Include="resources\pics\bugcLogo.ico" />
     <Content Include="resources\pics\buLibraryLogo.ico" />
   </ItemGroup>

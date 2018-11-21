@@ -14,6 +14,7 @@ namespace bugcLibrary
 {
     public partial class LoginForm : Form
     {
+        public static MainForm mainForm = new MainForm();
         Database database = new Database();
         Security security = new Security();
         MySqlCommand dbCommand;
@@ -34,25 +35,28 @@ namespace bugcLibrary
         {
             if (database.openConnection())
             {
-                dbCommand = new MySqlCommand("SELECT * FROM users", database.subConnect());
+                dbCommand = new MySqlCommand("SELECT * FROM user", database.subConnect());
                 MySqlDataReader users = dbCommand.ExecuteReader();
                 if (users.Read())
                 {
-                    MessageBox.Show(users.GetString("password") + "\n" + security.md5(passwordField.Text) + "\n" + users.GetString("username") + "\n" + usernameField.Text);
-                    if (users.GetString("username") == usernameField.Text && users.GetString("password") == security.md5(passwordField.Text))
+                    if (users.GetString("username") == usernameField.Text && users.GetString("password").ToUpper() == security.md5(passwordField.Text))
                     {
                         MessageBox.Show("Login Success");
+                        this.Hide();
+                        mainForm.Show();
                     }
                     else
                     {
-                        this.Close();
-                        MainForm mainForm = new MainForm();
-                        mainForm.Show();
                         MessageBox.Show("Login Fail");
                     }
                 }
                 database.closeConnection();
             }
+        }
+
+        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
 
 

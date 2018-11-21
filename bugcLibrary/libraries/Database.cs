@@ -10,7 +10,8 @@ namespace bugcLibrary.libraries
 {
     public class Database
     {
-        private MySqlConnection connection;
+        public MySqlConnection connection;
+        public MySqlConnection connection2;
         private string server;
         private string user;
         private string password;
@@ -26,9 +27,19 @@ namespace bugcLibrary.libraries
             server = "127.0.0.1";
             user = "root";
             password = "";
-            dbName = "bugc_library";
+            dbName = "bugc";
             string connectionString = "SERVER=" + server + ";" + "DATABASE=" + dbName + ";" + "UID=" + user + ";" + "PASSWORD=" + password + ";";
             connection = new MySqlConnection(connectionString);
+        }
+
+        public void connect2()
+        {
+            server = "127.0.0.1";
+            user = "root";
+            password = "";
+            dbName = "bugc";
+            string connectionString = "SERVER=" + server + ";" + "DATABASE=" + dbName + ";" + "UID=" + user + ";" + "PASSWORD=" + password + ";";
+            connection2 = new MySqlConnection(connectionString);
         }
 
         public bool openConnection()
