@@ -40,7 +40,7 @@
             this.blockLabel = new System.Windows.Forms.Label();
             this.studentId = new System.Windows.Forms.Label();
             this.studentIdLabel = new System.Windows.Forms.Label();
-            this.aaaaaaaaa = new System.Windows.Forms.TextBox();
+            this.studentIdField = new System.Windows.Forms.TextBox();
             this.searchStudent = new System.Windows.Forms.Button();
             this.searchStudentIdLabel = new System.Windows.Forms.Label();
             this.fingerPrintBox = new System.Windows.Forms.PictureBox();
@@ -176,12 +176,12 @@
             this.studentIdLabel.TabIndex = 10;
             this.studentIdLabel.Text = "Student ID:";
             // 
-            // aaaaaaaaa
+            // studentIdField
             // 
-            this.aaaaaaaaa.Location = new System.Drawing.Point(162, 89);
-            this.aaaaaaaaa.Name = "aaaaaaaaa";
-            this.aaaaaaaaa.Size = new System.Drawing.Size(160, 20);
-            this.aaaaaaaaa.TabIndex = 12;
+            this.studentIdField.Location = new System.Drawing.Point(162, 89);
+            this.studentIdField.Name = "studentIdField";
+            this.studentIdField.Size = new System.Drawing.Size(160, 20);
+            this.studentIdField.TabIndex = 12;
             // 
             // searchStudent
             // 
@@ -304,7 +304,7 @@
             this.Controls.Add(this.fingerPrintBox);
             this.Controls.Add(this.searchStudentIdLabel);
             this.Controls.Add(this.searchStudent);
-            this.Controls.Add(this.aaaaaaaaa);
+            this.Controls.Add(this.studentIdField);
             this.Controls.Add(this.studentId);
             this.Controls.Add(this.studentIdLabel);
             this.Controls.Add(this.studentBlock);
@@ -342,7 +342,7 @@
         private System.Windows.Forms.Label blockLabel;
         private System.Windows.Forms.Label studentId;
         private System.Windows.Forms.Label studentIdLabel;
-        private System.Windows.Forms.TextBox aaaaaaaaa;
+        private System.Windows.Forms.TextBox studentIdField;
         private System.Windows.Forms.Button searchStudent;
         private System.Windows.Forms.Label searchStudentIdLabel;
         private System.Windows.Forms.PictureBox fingerPrintBox;

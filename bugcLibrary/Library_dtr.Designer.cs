@@ -38,6 +38,8 @@
             this.infoLabel = new System.Windows.Forms.Label();
             this.picFPImg = new System.Windows.Forms.PictureBox();
             this.backBtn = new System.Windows.Forms.Button();
+            this.loginBtn = new System.Windows.Forms.Button();
+            this.logoutBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picFPImg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -136,12 +138,34 @@
             this.backBtn.Text = "<< Back";
             this.backBtn.UseVisualStyleBackColor = true;
             // 
+            // loginBtn
+            // 
+            this.loginBtn.Location = new System.Drawing.Point(827, 677);
+            this.loginBtn.Name = "loginBtn";
+            this.loginBtn.Size = new System.Drawing.Size(75, 23);
+            this.loginBtn.TabIndex = 10;
+            this.loginBtn.Text = "LOGIN";
+            this.loginBtn.UseVisualStyleBackColor = true;
+            this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
+            // 
+            // logoutBtn
+            // 
+            this.logoutBtn.Location = new System.Drawing.Point(947, 673);
+            this.logoutBtn.Name = "logoutBtn";
+            this.logoutBtn.Size = new System.Drawing.Size(75, 23);
+            this.logoutBtn.TabIndex = 11;
+            this.logoutBtn.Text = "LOGOUT";
+            this.logoutBtn.UseVisualStyleBackColor = true;
+            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
+            // 
             // Library_dtr
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1121, 713);
+            this.Controls.Add(this.logoutBtn);
+            this.Controls.Add(this.loginBtn);
             this.Controls.Add(this.backBtn);
             this.Controls.Add(this.picFPImg);
             this.Controls.Add(this.infoLabel);
@@ -175,5 +199,7 @@
         private System.Windows.Forms.Label infoLabel;
         private System.Windows.Forms.PictureBox picFPImg;
         private System.Windows.Forms.Button backBtn;
+        private System.Windows.Forms.Button loginBtn;
+        private System.Windows.Forms.Button logoutBtn;
     }
 }

@@ -50,6 +50,17 @@ namespace bugcLibrary
         public RecordStudent()
         {
             InitializeComponent();
+            clear();
+        }
+
+        private void clear()
+        {
+            studentFirstname.Text = "";
+            studentLastname.Text = "";
+            studentCourse.Text = "";
+            studentYear.Text = "";
+            studentBlock.Text = "";
+            studentId.Text = "";
         }
 
         private void bnInit_Click()
@@ -181,6 +192,7 @@ namespace bugcLibrary
                                         database.connection.Open();
                                         MySqlCommand command = new MySqlCommand(insertThumb, database.connection);
                                         command.ExecuteNonQuery();
+                                        IsRegister = false;
                                         MessageBox.Show("Rigth Thumb Registration Success!");
                                         studentFirstname.Text = "";
                                         studentLastname.Text = "";
@@ -188,7 +200,8 @@ namespace bugcLibrary
                                         studentYear.Text = "";
                                         studentBlock.Text = "";
                                         database.connection.Close();
-
+                                        cbRegTmp = 0;
+                                        RegisterCount = 0;
                                     }
                                     catch (MySqlException sql)
                                     {
@@ -292,15 +305,13 @@ namespace bugcLibrary
         {
             try
             {
-                string selectStudent = "SELECT * FROM `students` WHERE `studentId` = '" + aaaaaaaaa.Text + "' ";
-                MessageBox.Show(selectStudent);
+                string selectStudent = "SELECT * FROM `students` WHERE `studentId` = '" + studentIdField.Text + "' ";
                 database.initialized();
                 database.connection.Open();
                 MySqlCommand commad = new MySqlCommand(selectStudent, database.connection);
                 MySqlDataReader result = commad.ExecuteReader();
                 if (result.Read())
                 {
-                    MessageBox.Show("May na fetch na data");
                     studentIdNumber = result.GetInt16("id");
                     studentFirstname.Text = result.GetString("firstName");
                     studentLastname.Text = result.GetString("lastName");
@@ -322,11 +333,16 @@ namespace bugcLibrary
                     {
                         course = "BSED";
                     }
+                    if (courseNumber == 5)
+                    {
+                        course = "BSE";
+                    }
                     this.studentCourse.Text = course;
-                    studentYear.Text = result.GetUInt16("course").ToString();
+                    studentYear.Text = result.GetUInt16("year").ToString();
                     studentBlock.Text = result.GetString("block");
+                    studentId.Text = result.GetString("studentId");
                 }
-                studentId.Text = "";
+                studentIdField.Text = "";
             }
             catch (MySqlException sql)
             {

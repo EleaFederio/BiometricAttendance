@@ -34,6 +34,8 @@ namespace bugcLibrary
         private int mfpWidth = 0;
         private int mfpHeight = 0;
         const int MESSAGE_CAPTURED_OK = 0x0400 + 6;
+        bool login = false;
+        bool logout = false;
 
         [DllImport("user32.dll", EntryPoint = "SendMessageA")]
         public static extern int SendMessage(IntPtr hwnd, int wMsg, IntPtr wParam, IntPtr lParam);
@@ -182,68 +184,68 @@ namespace bugcLibrary
                                     int score = zkfp2.DBMatch(mDBHandle, templateFromDbZk4500, CapTmp);
                                     if (score > 0)
                                     {
-                                        database.connection.Close();
-                                        try
+                                        if (login == true)
                                         {
-                                            database.connection.Open();
-                                            string checkAttendance = "SELECT * FROM `students` JOIN `library_log` ON `students`.`id` = ``.`student` WHERE `student` = " + studentId + " LIMIT 1 ";
-                                            MySqlCommand command1 = new MySqlCommand(checkAttendance, database.connection);
-                                            MySqlDataReader result2 = command1.ExecuteReader();
-                                            if (result2.Read())
+                                            database.connection.Close();
+                                            try
                                             {
-                                                result2.Close();
-                                                database.connect2();
-                                                database.connection2.Open();
-                                                string attendanceQuery = "UPDATE `library_log` SET `time_out` = NOW() WHERE `student` = " + studentId + " ";
-                                                MySqlCommand command2 = new MySqlCommand(attendanceQuery, database.connection);
-                                                int attendanceSuccess = command2.ExecuteNonQuery();
-                                                if (attendanceSuccess == 1)
+                                                database.connection.Open();
+                                                string checkAttendance = "SELECT * FROM `students` JOIN `library_log` ON `students`.`id` = `library_log`.`student` WHERE `library_log`.`student` = " + studentId + " LIMIT 1 ";
+                                                MessageBox.Show(checkAttendance);
+                                                MySqlCommand command1 = new MySqlCommand(checkAttendance, database.connection);
+                                                MySqlDataReader result2 = command1.ExecuteReader();
+                                                if (result2.Read())
                                                 {
-                                                    MessageBox.Show("Attendance Success!");
-                                                    libraryDtrList.Clear();                                                    
-                                                    database.connection.Close();                                                 
-                                                    database.connection2.Close();                                                   
-                                                    listviewLoader();
-                                                }
-                                            }
-                                            else
-                                            {
-                                                try
-                                                {
-                                                    //MessageBox.Show("You are " + result.GetString("firstName") + " " + result.GetString("lastName"));
                                                     result2.Close();
                                                     database.connect2();
                                                     database.connection2.Open();
-                                                    string attendanceQuery = "INSERT INTO `library_log`  (`student`, `date`, `time_in`) VALUES (" + studentId + ", NOW(), NOW())";
+                                                    string attendanceQuery = "UPDATE `library_log` SET `time_out` = NOW() WHERE `student` = " + studentId + " ";
                                                     MySqlCommand command2 = new MySqlCommand(attendanceQuery, database.connection);
                                                     int attendanceSuccess = command2.ExecuteNonQuery();
+                                                    MessageBox.Show(attendanceSuccess.ToString());
                                                     if (attendanceSuccess == 1)
                                                     {
                                                         MessageBox.Show("Attendance Success!");
                                                         libraryDtrList.Clear();
-                                                        MessageBox.Show("aaaaaaaaaaaaaaaaaaaaaaaaa");
                                                         database.connection.Close();
-                                                        MessageBox.Show("Connection Close");
                                                         database.connection2.Close();
-                                                        MessageBox.Show("Connection 2 close");
                                                         listviewLoader();
-                                                        MessageBox.Show("XXXXXXXXXXXXXXXXXXXXXXXXXX");
                                                     }
                                                 }
-                                                catch (MySqlException sql)
+                                                else
                                                 {
-                                                    MessageBox.Show(sql.Message);
+                                                    try
+                                                    {
+                                                        //MessageBox.Show("You are " + result.GetString("firstName") + " " + result.GetString("lastName"));
+                                                        result2.Close();
+                                                        database.connect2();
+                                                        database.connection2.Open();
+                                                        string attendanceQuery = "INSERT INTO `library_log`  (`student`, `date`, `time_in`) VALUES (" + studentId + ", NOW(), NOW())";
+                                                        MySqlCommand command2 = new MySqlCommand(attendanceQuery, database.connection);
+                                                        int attendanceSuccess = command2.ExecuteNonQuery();
+                                                        if (attendanceSuccess == 1)
+                                                        {
+                                                            MessageBox.Show("Attendance Success!");
+                                                            libraryDtrList.Clear();
+                                                            database.connection.Close();
+                                                            database.connection2.Close();
+                                                            listviewLoader();
+                                                        }
+                                                    }
+                                                    catch (MySqlException sql)
+                                                    {
+                                                        MessageBox.Show(sql.Message);
+                                                    }
+                                                    database.connection2.Close();
                                                 }
-                                                database.connection2.Close();
                                             }
+                                            catch (Exception ex)
+                                            {
+                                                MessageBox.Show("resultset2 " + ex.Message);
+                                            }
+                                            database.connection.Close();
+                                            break;
                                         }
-                                        catch (Exception ex)
-                                        {
-                                            MessageBox.Show("resultset2 " + ex.Message);
-                                        }
-                                        database.connection.Close();
-                                        break;
-
                                     }
                                 }
                                 database.connection.Close();
@@ -325,6 +327,18 @@ namespace bugcLibrary
                 bIdentify = true;
                 infoLabel.Text = "Ready to record attendance";
             }
+        }
+
+        private void loginBtn_Click(object sender, EventArgs e)
+        {
+            login = true;
+            logout = false;
+        }
+
+        private void logoutBtn_Click(object sender, EventArgs e)
+        {
+            logout = true;
+            login = false;
         }
     }
 }
