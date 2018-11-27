@@ -186,11 +186,17 @@ namespace bugcLibrary
                                     {
                                         if (login == true)
                                         {
+                                            
+                                        }
+
+                                        if (logout == true)
+                                        {
+                                            //SELECT * FROM `library_log` JOIN `students` ON `students`.`id` = `library_log`.`student` WHERE `library_log`.`student` = 7 AND time_out = '00:00:00'
                                             database.connection.Close();
                                             try
                                             {
                                                 database.connection.Open();
-                                                string checkAttendance = "SELECT * FROM `students` JOIN `library_log` ON `students`.`id` = `library_log`.`student` WHERE `library_log`.`student` = " + studentId + " LIMIT 1 ";
+                                                string checkAttendance = "SELECT * FROM `library_log` JOIN `students` ON `students`.`id` = `library_log`.`student` WHERE `library_log`.`student` = "+ studentId +" AND time_out = '00:00:00'";
                                                 MessageBox.Show(checkAttendance);
                                                 MySqlCommand command1 = new MySqlCommand(checkAttendance, database.connection);
                                                 MySqlDataReader result2 = command1.ExecuteReader();
@@ -199,7 +205,7 @@ namespace bugcLibrary
                                                     result2.Close();
                                                     database.connect2();
                                                     database.connection2.Open();
-                                                    string attendanceQuery = "UPDATE `library_log` SET `time_out` = NOW() WHERE `student` = " + studentId + " ";
+                                                    string attendanceQuery = "UPDATE `library_log` SET `time_out` = NOW() WHERE `student` = " + studentId + " AND `time_out` = '00:00:00' ";
                                                     MySqlCommand command2 = new MySqlCommand(attendanceQuery, database.connection);
                                                     int attendanceSuccess = command2.ExecuteNonQuery();
                                                     MessageBox.Show(attendanceSuccess.ToString());
