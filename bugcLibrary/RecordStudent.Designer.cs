@@ -62,9 +62,9 @@
             this.firstnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.firstnameLabel.Location = new System.Drawing.Point(61, 227);
             this.firstnameLabel.Name = "firstnameLabel";
-            this.firstnameLabel.Size = new System.Drawing.Size(90, 20);
+            this.firstnameLabel.Size = new System.Drawing.Size(86, 20);
             this.firstnameLabel.TabIndex = 0;
-            this.firstnameLabel.Text = "First Name:";
+            this.firstnameLabel.Text = "First Name";
             // 
             // studentFirstname
             // 
@@ -92,9 +92,9 @@
             this.lastnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lastnameLabel.Location = new System.Drawing.Point(60, 256);
             this.lastnameLabel.Name = "lastnameLabel";
-            this.lastnameLabel.Size = new System.Drawing.Size(90, 20);
+            this.lastnameLabel.Size = new System.Drawing.Size(86, 20);
             this.lastnameLabel.TabIndex = 2;
-            this.lastnameLabel.Text = "Last Name:";
+            this.lastnameLabel.Text = "Last Name";
             // 
             // studentCourse
             // 
@@ -112,9 +112,9 @@
             this.courseLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.courseLabel.Location = new System.Drawing.Point(60, 285);
             this.courseLabel.Name = "courseLabel";
-            this.courseLabel.Size = new System.Drawing.Size(64, 20);
+            this.courseLabel.Size = new System.Drawing.Size(60, 20);
             this.courseLabel.TabIndex = 4;
-            this.courseLabel.Text = "Course:";
+            this.courseLabel.Text = "Course";
             // 
             // studentYear
             // 
@@ -132,9 +132,9 @@
             this.yearLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.yearLabel.Location = new System.Drawing.Point(60, 316);
             this.yearLabel.Name = "yearLabel";
-            this.yearLabel.Size = new System.Drawing.Size(47, 20);
+            this.yearLabel.Size = new System.Drawing.Size(43, 20);
             this.yearLabel.TabIndex = 6;
-            this.yearLabel.Text = "Year:";
+            this.yearLabel.Text = "Year";
             // 
             // studentBlock
             // 
@@ -152,9 +152,9 @@
             this.blockLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.blockLabel.Location = new System.Drawing.Point(60, 346);
             this.blockLabel.Name = "blockLabel";
-            this.blockLabel.Size = new System.Drawing.Size(52, 20);
+            this.blockLabel.Size = new System.Drawing.Size(48, 20);
             this.blockLabel.TabIndex = 8;
-            this.blockLabel.Text = "Block:";
+            this.blockLabel.Text = "Block";
             // 
             // studentId
             // 
@@ -172,36 +172,43 @@
             this.studentIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentIdLabel.Location = new System.Drawing.Point(60, 376);
             this.studentIdLabel.Name = "studentIdLabel";
-            this.studentIdLabel.Size = new System.Drawing.Size(91, 20);
+            this.studentIdLabel.Size = new System.Drawing.Size(87, 20);
             this.studentIdLabel.TabIndex = 10;
-            this.studentIdLabel.Text = "Student ID:";
+            this.studentIdLabel.Text = "Student ID";
             // 
             // studentIdField
             // 
             this.studentIdField.Location = new System.Drawing.Point(162, 89);
             this.studentIdField.Name = "studentIdField";
+            this.studentIdField.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.studentIdField.Size = new System.Drawing.Size(160, 20);
             this.studentIdField.TabIndex = 12;
             // 
             // searchStudent
             // 
-            this.searchStudent.Location = new System.Drawing.Point(332, 87);
+            this.searchStudent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(57)))), ((int)(((byte)(53)))));
+            this.searchStudent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.searchStudent.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(57)))), ((int)(((byte)(53)))));
+            this.searchStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchStudent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.searchStudent.Location = new System.Drawing.Point(332, 89);
             this.searchStudent.Name = "searchStudent";
-            this.searchStudent.Size = new System.Drawing.Size(123, 23);
+            this.searchStudent.Size = new System.Drawing.Size(137, 21);
             this.searchStudent.TabIndex = 13;
             this.searchStudent.Text = "SEARCH STUDENT";
-            this.searchStudent.UseVisualStyleBackColor = true;
+            this.searchStudent.UseVisualStyleBackColor = false;
             this.searchStudent.Click += new System.EventHandler(this.searchStudent_Click);
             // 
             // searchStudentIdLabel
             // 
             this.searchStudentIdLabel.AutoSize = true;
             this.searchStudentIdLabel.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchStudentIdLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
             this.searchStudentIdLabel.Location = new System.Drawing.Point(52, 90);
             this.searchStudentIdLabel.Name = "searchStudentIdLabel";
-            this.searchStudentIdLabel.Size = new System.Drawing.Size(100, 18);
+            this.searchStudentIdLabel.Size = new System.Drawing.Size(96, 18);
             this.searchStudentIdLabel.TabIndex = 14;
-            this.searchStudentIdLabel.Text = "Student ID:";
+            this.searchStudentIdLabel.Text = "Student ID\r\n";
             // 
             // fingerPrintBox
             // 
@@ -214,7 +221,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.SlateGray;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
             this.panel1.Controls.Add(this.cmbIdx);
             this.panel1.Controls.Add(this.notificationLabel);
             this.panel1.Controls.Add(this.closeScannerBtn);
@@ -245,59 +252,74 @@
             // 
             // closeScannerBtn
             // 
+            this.closeScannerBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(57)))), ((int)(((byte)(53)))));
+            this.closeScannerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeScannerBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.closeScannerBtn.Location = new System.Drawing.Point(350, 22);
             this.closeScannerBtn.Name = "closeScannerBtn";
             this.closeScannerBtn.Size = new System.Drawing.Size(106, 23);
             this.closeScannerBtn.TabIndex = 3;
             this.closeScannerBtn.Text = "CLOSE SCANNER";
-            this.closeScannerBtn.UseVisualStyleBackColor = true;
+            this.closeScannerBtn.UseVisualStyleBackColor = false;
             this.closeScannerBtn.Click += new System.EventHandler(this.closeScannerBtn_Click);
             // 
             // verifyScannerBtn
             // 
+            this.verifyScannerBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(57)))), ((int)(((byte)(53)))));
+            this.verifyScannerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.verifyScannerBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.verifyScannerBtn.Location = new System.Drawing.Point(239, 22);
             this.verifyScannerBtn.Name = "verifyScannerBtn";
             this.verifyScannerBtn.Size = new System.Drawing.Size(105, 23);
             this.verifyScannerBtn.TabIndex = 2;
             this.verifyScannerBtn.Text = "VERIFY";
-            this.verifyScannerBtn.UseVisualStyleBackColor = true;
+            this.verifyScannerBtn.UseVisualStyleBackColor = false;
             this.verifyScannerBtn.Click += new System.EventHandler(this.verifyScannerBtn_Click);
             // 
             // registerScannerBtn
             // 
+            this.registerScannerBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(57)))), ((int)(((byte)(53)))));
+            this.registerScannerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.registerScannerBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.registerScannerBtn.Location = new System.Drawing.Point(128, 22);
             this.registerScannerBtn.Name = "registerScannerBtn";
             this.registerScannerBtn.Size = new System.Drawing.Size(105, 23);
             this.registerScannerBtn.TabIndex = 1;
             this.registerScannerBtn.Text = "REGISTER";
-            this.registerScannerBtn.UseVisualStyleBackColor = true;
+            this.registerScannerBtn.UseVisualStyleBackColor = false;
             this.registerScannerBtn.Click += new System.EventHandler(this.registerScannerBtn_Click);
             // 
             // openScannerBtn
             // 
+            this.openScannerBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(57)))), ((int)(((byte)(53)))));
+            this.openScannerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.openScannerBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.openScannerBtn.Location = new System.Drawing.Point(17, 22);
             this.openScannerBtn.Name = "openScannerBtn";
             this.openScannerBtn.Size = new System.Drawing.Size(105, 23);
             this.openScannerBtn.TabIndex = 0;
             this.openScannerBtn.Text = "OPEN SCANNER";
-            this.openScannerBtn.UseVisualStyleBackColor = true;
+            this.openScannerBtn.UseVisualStyleBackColor = false;
             this.openScannerBtn.Click += new System.EventHandler(this.openScannerBtn_Click);
             // 
             // backBtn
             // 
+            this.backBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(57)))), ((int)(((byte)(53)))));
+            this.backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.backBtn.Location = new System.Drawing.Point(13, 12);
             this.backBtn.Name = "backBtn";
             this.backBtn.Size = new System.Drawing.Size(75, 23);
             this.backBtn.TabIndex = 17;
-            this.backBtn.Text = "<< Back";
-            this.backBtn.UseVisualStyleBackColor = true;
+            this.backBtn.Text = "Back >>";
+            this.backBtn.UseVisualStyleBackColor = false;
             this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
             // RecordStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SteelBlue;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(562, 557);
             this.Controls.Add(this.backBtn);
             this.Controls.Add(this.panel1);
@@ -318,6 +340,7 @@
             this.Controls.Add(this.studentFirstname);
             this.Controls.Add(this.firstnameLabel);
             this.Name = "RecordStudent";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "RecordStudent";
             this.Load += new System.EventHandler(this.RecordStudent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.fingerPrintBox)).EndInit();

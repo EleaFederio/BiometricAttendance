@@ -36,8 +36,10 @@
             // 
             // internetLabBiometricAttendanceBtn
             // 
-            this.internetLabBiometricAttendanceBtn.BackColor = System.Drawing.Color.Gray;
+            this.internetLabBiometricAttendanceBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(57)))), ((int)(((byte)(53)))));
+            this.internetLabBiometricAttendanceBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.internetLabBiometricAttendanceBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.internetLabBiometricAttendanceBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.internetLabBiometricAttendanceBtn.Location = new System.Drawing.Point(236, 12);
             this.internetLabBiometricAttendanceBtn.Name = "internetLabBiometricAttendanceBtn";
             this.internetLabBiometricAttendanceBtn.Size = new System.Drawing.Size(215, 143);
@@ -47,8 +49,10 @@
             // 
             // recordStudentBtn
             // 
-            this.recordStudentBtn.BackColor = System.Drawing.Color.Gray;
+            this.recordStudentBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(57)))), ((int)(((byte)(53)))));
+            this.recordStudentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.recordStudentBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recordStudentBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.recordStudentBtn.Location = new System.Drawing.Point(12, 12);
             this.recordStudentBtn.Name = "recordStudentBtn";
             this.recordStudentBtn.Size = new System.Drawing.Size(215, 143);
@@ -59,8 +63,10 @@
             // 
             // bibraryBiometricAttendanceBtn
             // 
-            this.bibraryBiometricAttendanceBtn.BackColor = System.Drawing.Color.Gray;
+            this.bibraryBiometricAttendanceBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(57)))), ((int)(((byte)(53)))));
+            this.bibraryBiometricAttendanceBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bibraryBiometricAttendanceBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bibraryBiometricAttendanceBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.bibraryBiometricAttendanceBtn.Location = new System.Drawing.Point(467, 12);
             this.bibraryBiometricAttendanceBtn.Name = "bibraryBiometricAttendanceBtn";
             this.bibraryBiometricAttendanceBtn.Size = new System.Drawing.Size(215, 143);
@@ -73,6 +79,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(718, 428);
             this.Controls.Add(this.bibraryBiometricAttendanceBtn);
             this.Controls.Add(this.recordStudentBtn);

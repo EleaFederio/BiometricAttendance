@@ -13,5 +13,4 @@ C:\Users\internetLab\documents\visual studio 2012\Projects\bugcLibrary\bugcLibra
 C:\Users\internetLab\documents\visual studio 2012\Projects\bugcLibrary\bugcLibrary\obj\Debug\bugcLibrary.csproj.GenerateResource.Cache
 C:\Users\internetLab\documents\visual studio 2012\Projects\bugcLibrary\bugcLibrary\obj\Debug\bugcLibrary.exe
 C:\Users\internetLab\documents\visual studio 2012\Projects\bugcLibrary\bugcLibrary\obj\Debug\bugcLibrary.pdb
-C:\Users\internetLab\documents\visual studio 2012\Projects\bugcLibrary\bugcLibrary\bin\Debug\bugcLibrary.exe.CodeAnalysisLog.xml
-C:\Users\internetLab\documents\visual studio 2012\Projects\bugcLibrary\bugcLibrary\bin\Debug\bugcLibrary.exe.lastcodeanalysissucceeded
+C:\Users\internetLab\documents\visual studio 2012\Projects\bugcLibrary\bugcLibrary\obj\Debug\bugcLibrary.csprojResolveAssemblyReference.cache
