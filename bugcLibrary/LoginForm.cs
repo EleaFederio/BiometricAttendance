@@ -33,24 +33,31 @@ namespace bugcLibrary
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            if (database.openConnection())
+            try
             {
-                dbCommand = new MySqlCommand("SELECT * FROM user", database.subConnect());
-                MySqlDataReader users = dbCommand.ExecuteReader();
-                if (users.Read())
+                if (database.openConnection())
                 {
-                    if (users.GetString("username") == usernameField.Text && users.GetString("password").ToUpper() == security.md5(passwordField.Text))
+                    dbCommand = new MySqlCommand("SELECT * FROM user", database.subConnect());
+                    MySqlDataReader users = dbCommand.ExecuteReader();
+                    if (users.Read())
                     {
-                        MessageBox.Show("Login Success");
-                        this.Hide();
-                        mainForm.Show();
+                        if (users.GetString("username") == usernameField.Text && users.GetString("password").ToUpper() == security.md5(passwordField.Text))
+                        {
+                            MessageBox.Show("Login Success");
+                            this.Hide();
+                            mainForm.Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Login Fail");
+                        }
                     }
-                    else
-                    {
-                        MessageBox.Show("Login Fail");
-                    }
+                    database.closeConnection();
                 }
-                database.closeConnection();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
