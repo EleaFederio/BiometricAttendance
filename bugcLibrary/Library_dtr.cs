@@ -70,7 +70,7 @@ namespace bugcLibrary
                 database.connection.Open();
                 libraryDtrList.Refresh();
                 string course = "";
-                string query = "SELECT students.firstName, students.lastName, students.course, students.year, students.block, library_log.time_in, library_log.time_out, library_log.date FROM `students` JOIN `library_log` ON `library_log`.`student` = `students`.`id`";
+                string query = "SELECT students.firstName, students.lastName, students.course, students.year, students.block, library_log.time_in, library_log.time_out, library_log.date FROM `students` JOIN `library_log` ON `library_log`.`student` = `students`.`id` WHERE `date` = CURRENT_DATE()";
                 //MessageBox.Show(query);
                 MySqlCommand command = new MySqlCommand(query, database.connection);
                 MySqlDataReader reader = command.ExecuteReader();
@@ -106,6 +106,7 @@ namespace bugcLibrary
                     add(firstName, lastName, course, year, block, time_in, time_out);
                 }
                 database.connection.Close();
+                libraryDtrList.Items[libraryDtrList.Items.Count - 1].EnsureVisible();
             }
             catch (MySqlException sql)
             {
@@ -165,6 +166,7 @@ namespace bugcLibrary
                         {
                             try
                             {
+                                int checker = 0;
                                 byte[] templateFromDbZk4500 = new byte[2048];
                                 string stringTemplate = "";
                                 string fetchThumb = "SELECT * FROM `students`";
@@ -194,13 +196,13 @@ namespace bugcLibrary
                                             MySqlDataReader result2 = command1.ExecuteReader();
                                             if (result2.Read())
                                             {
+                                                checker = 0;
                                                 result2.Close();
                                                 database.connect2();
                                                 database.connection2.Open();
                                                 string attendanceQuery = "UPDATE `library_log` SET `time_out` = NOW() WHERE `student` = " + studentId + " AND `time_out` = '00:00:00' ";
                                                 MySqlCommand command2 = new MySqlCommand(attendanceQuery, database.connection);
                                                 int attendanceSuccess = command2.ExecuteNonQuery();
-                                                //MessageBox.Show(attendanceSuccess.ToString());
                                                 if (attendanceSuccess == 1)
                                                 {
                                                     MessageBox.Show("Logout Success!");
@@ -212,6 +214,7 @@ namespace bugcLibrary
                                             }
                                             else
                                             {
+                                                checker = 0;
                                                 try
                                                 {
                                                     //MessageBox.Show("You are " + result.GetString("firstName") + " " + result.GetString("lastName"));
@@ -229,6 +232,10 @@ namespace bugcLibrary
                                                         database.connection2.Close();
                                                         listviewLoader();
                                                     }
+                                                    else
+                                                    {
+                                                        MessageBox.Show("Unknown Biometric");
+                                                    }
                                                 }
                                                 catch (MySqlException sql)
                                                 {
@@ -244,6 +251,14 @@ namespace bugcLibrary
                                         database.connection.Close();
                                         break;
                                     }
+                                    else
+                                    {
+                                        checker = 1;
+                                    }
+                                }
+                                if(checker == 1)
+                                {
+                                    MessageBox.Show("Unkown Bimetrics");
                                 }
                                 database.connection.Close();
                             }
