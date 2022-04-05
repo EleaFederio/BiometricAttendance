@@ -106,7 +106,7 @@ namespace bugcLibrary
                     add(firstName, lastName, course, year, block, time_in, time_out);
                 }
                 database.connection.Close();
-                libraryDtrList.Items[libraryDtrList.Items.Count - 1].EnsureVisible();
+                //libraryDtrList.Items[libraryDtrList.Items.Count - 1].EnsureVisible();
             }
             catch (MySqlException sql)
             {

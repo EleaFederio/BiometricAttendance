@@ -47,6 +47,7 @@
             this.usernameField.Name = "usernameField";
             this.usernameField.Size = new System.Drawing.Size(194, 20);
             this.usernameField.TabIndex = 0;
+            this.usernameField.TextChanged += new System.EventHandler(this.usernameField_TextChanged);
             // 
             // passwordField
             // 

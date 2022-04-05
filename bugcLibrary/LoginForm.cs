@@ -57,7 +57,7 @@ namespace bugcLibrary
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Hahaha" + ex.Message);
             }
         }
 
@@ -71,6 +71,9 @@ namespace bugcLibrary
 
         }
 
+        private void usernameField_TextChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }
